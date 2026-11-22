@@ -28,9 +28,19 @@ def index():
 
 @app.route('/add', methods=['POST'])
 def add_log():
-  subject = request.form.get('subject')
-  duration = float(request.form.get('duration', 0))
+  subject = request.form.get('subject', '').strip()
+  raw_duration = request.form.get('duration', '').strip()
   date = request.form.get('date') or datetime.now().strftime('%Y-%m-%d')
+
+  if not subject or not raw_duration:
+    return redirect(url_for('index'))
+
+  try:
+    duration = float(raw_duration)
+    if duration <= 0:
+      return redirect(url_for('index'))
+  except ValueError:
+    return redirect(url_for('index'))
 
   new_log = StudyLog(subject=subject, duration=duration, date=date)
   db.session.add(new_log)
