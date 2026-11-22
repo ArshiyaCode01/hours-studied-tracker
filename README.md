@@ -21,9 +21,8 @@ A lightweight web application built to help college students track, manage, and 
 Follow these steps to run the application locally:
 
 1. **Clone the repository and enter the directory:**
-   ```bash
-     git clone [https://github.com/ArshiyaCode01/hours-studied-tracker.git](https://github.com/ArshiyaCode01/hours-studied tracker.git)
-    cd hours-studied-tracker
+     git clone [https://github.com/ArshiyaCode01/hours-studied-tracker.git](https://github.com/ArshiyaCode01/hours-studied          tracker.git)
+     cd hours-studied-tracker
 2. **Create and activate a Python virtual environment:**
     python -m venv venv
     venv\Scripts\activate
